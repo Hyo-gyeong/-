@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<head>
+    <style>
+            @font-face { font-family: 'BMHANNAAir'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff'); font-weight: normal; font-style: normal; }
+        * {
+          font-family: 'BMHANNAAir';
+        }
+    </style>
+</head>
+<body>
+    <div class="all" style="width:85%;">
+            <div class="content">
+                <p id="title"><font style="font-weight:bold;">Title</font>  : {{detail.title}}</p>
+                <p id="date"><font style="font-weight:bold;">Date</font> : {{detail.pub_date}}</p>
+                <p id="body"><font style="font-weight:bold;">Contents</font>  : {{detail.body}}</p>
+            </div>
+            <a href="{% url 'home' %}">돌아가기</a>
+    </div>
+</body>

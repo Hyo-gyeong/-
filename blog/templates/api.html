@@ -1,0 +1,46 @@
+<head>
+    <style>
+            @font-face { font-family: 'BMHANNAAir'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff'); font-weight: normal; font-style: normal; }
+        * {
+          font-family: 'BMHANNAAir';
+        }
+    </style>
+</head>
+<body>
+    <p class="text"><a href="{% url 'home' %}" style="font-weight: bold;">&nbsp;...back to blog</a></p>
+    <div id="map" style="width:80%;height:80%; position: absolute; left:100px; top:80px; border:7px outset lightgray;"></div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=50eb0ef729ef6672e9ab0d35042b1c35"></script>
+    <script>
+        var container = document.getElementById('map');
+        var options = {
+            center: new daum.maps.LatLng(37.6290368,127.017325,15),
+            level: 3
+        };
+
+        var map = new daum.maps.Map(container, options);
+    </script>
+    <script>
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                mapOption = { 
+                    center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+                    level: 3 // 지도의 확대 레벨
+                };
+            
+            var map = new daum.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+            
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new daum.maps.LatLng(33.450701, 126.570667); 
+            
+            // 마커를 생성합니다
+            var marker = new daum.maps.Marker({
+                position: markerPosition
+            });
+            
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+            
+            // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
+            // marker.setMap(null);    
+            </script>
+</body>
+</html>

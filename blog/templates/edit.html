@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<head>
+    <style>
+            @font-face { font-family: 'BMHANNAAir'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff'); font-weight: normal; font-style: normal; }
+        * {
+          font-family: 'BMHANNAAir';
+        }
+    </style>
+</head>
+<form method="POST" action="{% url 'edit' blog.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+        <p><label for="title">title:</label><br></p>
+        <p><input type="text" name="title" value="{{blog.title}}"><br></p>
+        <p><label for="body">body: </label><br></p>
+        <p><textarea rows=15 cols=150 name="body">{{blog.body}}</textarea></p>
+        <p><input class="btn btn-dark aright" type="submit" value="완료"></p>
+    </div>
+</form>

@@ -1,0 +1,21 @@
+{% load staticfiles %}
+<head>
+    <style>
+            @font-face { font-family: 'BMHANNAAir'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff'); font-weight: normal; font-style: normal; }
+        * {
+          font-family: 'BMHANNAAir';
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <form method="POST" action="{% url 'create' %}"> <!--submit버튼을 누르면 create url을 타고 views로 넘어감-->
+                {% csrf_token %}
+                <p>제목: <input type="text" name="title"></p>
+                <p>본문: <br>
+                <textarea cols=200 rows=20 name="body"></textarea>
+                <input type="submit" value="🥕" style="width:70px; height:70px; border:hidden;">
+                </p>
+            </form>
+        </div>
+        <body>
